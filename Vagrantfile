@@ -51,7 +51,7 @@ Vagrant::Config.run do |config|
   provision_hi_sinatra = [
     "sudo touch /root/.no_prompting_for_git_credentials",
     "sudo touch /home/jenkins/.no_prompting_for_git_credentials",
-    "sudo -i dockerize boot cambridge-healthcare/hi_sinatra-docker:continuos-delivery-2 hi_sinatra",
+    "sudo -i dockerize boot cambridge-healthcare/hi_sinatra-docker:master hi_sinatra",
     "if [[ $? = 0 ]]; then sudo -i echo \"hi_sinatra successfully started, available on http://#{BOX_IP}:$(sudo -i dockerize show hi_sinatra Tcp | awk '{ print $2 }')\"; fi",
   ]
 
